@@ -105,6 +105,31 @@
                         margin-left: -29px;
                     }
                 }
+                .feature img{
+                    width: 303px;
+                    @-webkit-keyframes flash {
+                        0% {
+                            opacity: .4;
+                        }
+                        100% {
+                            opacity: 1;
+                        }
+                    }
+                    @keyframes flash {
+                        0% {
+                            opacity: .4;
+                        }
+                        100% {
+                            opacity: 1;
+                        }
+                    }
+                }
+                
+                .feature:hover img{
+                    opacity: 1;
+                    -webkit-animation: flash 1.5s;
+                    animation: flash 1.5s;
+                }
 
             }
 
@@ -211,6 +236,18 @@
         }
 
         .best {
+            animation: moveUpDown 1s infinite alternate;
+            @keyframes moveUpDown {
+                0% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-5px);
+                }
+                100% {
+                    transform: translateY(0);
+                }
+            }
             .custom-pres {
                 margin-top: 20px;
                 position: relative;
@@ -237,8 +274,10 @@
 
 
             }
-
+            
             .card-best {
+               
+              
                 .title {
                     background-size: cover;
                     background-position: center center;
@@ -273,9 +312,8 @@
                         -webkit-line-clamp: 1;
                     }
                 }
-
-
             }
+           
         }
     }
 }
