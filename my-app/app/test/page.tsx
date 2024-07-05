@@ -1,24 +1,51 @@
-import '../scss/test.scss'
-const Test = () => {
+'use client'
+import React, { useState } from 'react';
+import type { RadioChangeEvent } from 'antd';
+import { Radio, Space, Tabs } from 'antd';
+
+type TabPosition = 'left';
+
+const App: React.FC = () => {
+    const [tabPosition, setTabPosition] = useState<TabPosition>('left');
+    const [activeKey, setActiveKey] = useState('1');
+
+    const changeTabPosition = (e: RadioChangeEvent) => {
+        setTabPosition(e.target.value);
+    };
+
+    const handleTabHover = (key: string) => {
+        setActiveKey(key);
+    };
+
     return (
         <>
-            <div className="dropdown" style={{ marginLeft: '100px' }}>
-                <button className="dropbtn">Dropdown</button>
-                <div className="dropdown-content">
-                    <div className='links'>
-                        <div className='hover1'>
-                            <p>link 1</p>
-                        </div>
-
-                    </div>
-                    <div className='links'>
-                        <div className=''>
-                            <p>link 2</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Space style={{ marginBottom: 24 }}>
+                Tab position:
+                <Radio.Group value={tabPosition} onChange={changeTabPosition}>
+                    <Radio.Button value="top">top</Radio.Button>
+                    <Radio.Button value="bottom">bottom</Radio.Button>
+                    <Radio.Button value="left">left</Radio.Button>
+                    <Radio.Button value="right">right</Radio.Button>
+                </Radio.Group>
+            </Space>
+            <Tabs
+                activeKey={activeKey}
+                tabPosition={tabPosition}
+                items={new Array(3).fill(null).map((_, i) => {
+                    const id = String(i + 1);
+                    return {
+                        label: (
+                            <div onMouseEnter={() => handleTabHover(id)}>
+                                {`Tab ${id}`}
+                            </div>
+                        ),
+                        key: id,
+                        children: `Content of Tab ${id}`,
+                    };
+                })}
+            />
         </>
-    )
-}
-export default Test;
+    );
+};
+
+export default App;
