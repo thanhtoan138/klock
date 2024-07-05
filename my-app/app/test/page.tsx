@@ -18,8 +18,8 @@ const App: React.FC = () => {
     };
 
     return (
-        <>
-            <Space style={{ marginBottom: 24 }}>
+        <div style={{height:'1000px'}}>
+            {/* <Space style={{ marginBottom: 24 }}>
                 Tab position:
                 <Radio.Group value={tabPosition} onChange={changeTabPosition}>
                     <Radio.Button value="top">top</Radio.Button>
@@ -27,7 +27,7 @@ const App: React.FC = () => {
                     <Radio.Button value="left">left</Radio.Button>
                     <Radio.Button value="right">right</Radio.Button>
                 </Radio.Group>
-            </Space>
+            </Space> */}
             <Tabs
                 activeKey={activeKey}
                 tabPosition={tabPosition}
@@ -36,7 +36,7 @@ const App: React.FC = () => {
                     return {
                         label: (
                             <div onMouseEnter={() => handleTabHover(id)}>
-                                {`Tab ${id}`}
+                                {`tab ${id}`}
                             </div>
                         ),
                         key: id,
@@ -44,7 +44,7 @@ const App: React.FC = () => {
                     };
                 })}
             />
-        </>
+        </div>
     );
 };
 

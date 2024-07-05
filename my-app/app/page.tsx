@@ -659,16 +659,30 @@ export default function Home() {
           </div>
           <div className='partner grid-container'>
             <h3>Partnerships</h3>
+            <div className='logo grid-container'>
+              <img src="https://res.klook.com/image/upload/v1665390589/home/partner/i_shangrila_en_2x_ivbn4p.webp" width={120} height={45} alt="" />
+              <img src="https://res.klook.com/image/upload/v1665390606/home/partner/i_airasia_en_2x_dbl3vm.webp"width={120} height={45} alt="" />
+              <img src="https://res.klook.com/image/upload/v1665390608/home/partner/i_reserve_google_2x_yn12jk.webp"width={120} height={45} alt="" />
+              <img src="https://res.klook.com/image/upload/v1665390609/home/partner/i_disney_2x_beyawc.webp"width={120} height={45} alt="" />
+              <img src="https://res.klook.com/image/upload/v1665390611/home/partner/i_bigbus_2x_ki1pqj.webp"width={120} height={45} alt="" />
+              <img src="https://res.klook.com/image/upload/v1665390613/home/partner/i_railpass_2x_asjnah.webp"width={120} height={45} alt="" />
+              <img src="https://res.klook.com/image/upload/v1665390614/home/partner/i_line_travel_2x_plycft.webp"width={120} height={45} alt="" />
+              <img src="https://res.klook.com/image/upload/w_320/v1691142063/qc4bousc4la1mhzxpbhd.webp"width={120} height={45} alt="" />
+              <img src="https://res.klook.com/image/upload/v1665390618/home/partner/i_hkexpress_2x_ocprhe.webp"width={120} height={45} alt="" />
+            </div>
+          </div>
+          <div className='media'>
+            <h3>In the media</h3>
             <div className='logo'>
-              <img src="https://res.klook.com/image/upload/v1665390589/home/partner/i_shangrila_en_2x_ivbn4p.webp" alt="" />
-              <img src="https://res.klook.com/image/upload/v1665390606/home/partner/i_airasia_en_2x_dbl3vm.webp" alt="" />
-              <img src="https://res.klook.com/image/upload/v1665390608/home/partner/i_reserve_google_2x_yn12jk.webp" alt="" />
-              <img src="https://res.klook.com/image/upload/v1665390609/home/partner/i_disney_2x_beyawc.webp" alt="" />
-              <img src="https://res.klook.com/image/upload/v1665390611/home/partner/i_bigbus_2x_ki1pqj.webp" alt="" />
-              <img src="https://res.klook.com/image/upload/v1665390613/home/partner/i_railpass_2x_asjnah.webp" alt="" />
-              <img src="https://res.klook.com/image/upload/v1665390614/home/partner/i_line_travel_2x_plycft.webp" alt="" />
-              <img src="https://res.klook.com/image/upload/w_320/v1691142063/qc4bousc4la1mhzxpbhd.webp" alt="" />
-              <img src="https://res.klook.com/image/upload/v1665390618/home/partner/i_hkexpress_2x_ocprhe.webp" alt="" />
+                  <img src="https://res.klook.com/image/upload/v1665387795/home/partner/i_techcrunch_2x_o4u0ny.webp"width={100} height={40} alt="" />
+                  <img src="https://res.klook.com/image/upload/v1665387819/home/partner/i_cnbc_2x_jk5b0i.webp"width={100} height={40} alt="" />
+                  <img src="https://res.klook.com/image/upload/v1665387830/home/partner/i_wit2_2x_zfsnvv.webp"width={100} height={40} alt="" />
+                  <img src="https://res.klook.com/image/upload/v1665387834/home/partner/i_scmp2_2x_wkrdi0.webp"width={100} height={40} alt="" />
+                  <img src="https://res.klook.com/image/upload/v1665387839/home/partner/i_forbes_2x_lxvedz.webp"width={100} height={40} alt="" />
+                  <img src="https://res.klook.com/image/upload/v1665387844/home/partner/i_tdn_2x_zdytnf.webp"width={100} height={40} alt="" />
+                  <img src="https://res.klook.com/image/upload/v1665387846/home/partner/i_e27_2_2x_adsf8k.webp"width={100} height={40} alt="" />
+                  <img src="https://res.klook.com/image/upload/v1665387849/home/partner/i_wsj2_2x_yfpima.webp"width={180} height={40} alt="" />
+
             </div>
           </div>
         </Container>

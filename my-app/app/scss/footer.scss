@@ -1,0 +1,27 @@
+.footer{
+    .todo{
+        font-size: 14px;
+        font-weight: 500;
+        color: gray;
+      
+        display:grid;
+        grid-template-columns: auto auto auto auto auto auto;
+        span{
+            margin-left: 20px;
+            font-size: 8px;
+        }
+      
+    }
+    .index{
+        .gird-container{
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;  
+        }
+        p{
+            font-size: 14px;
+            font-weight: 400;
+            color: gray;
+            line-height: 30px;
+        }
+    }
+}
