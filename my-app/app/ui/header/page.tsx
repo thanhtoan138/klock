@@ -224,7 +224,7 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Navbar >
             </Container >
-            <hr style={{ position: 'relative', bottom: '16px' }} />
+            {/* <hr style={{ position: 'relative', bottom: '16px' }} />
             <Container className='nav2'>
                 <Navbar expand="lg">
                     <Container fluid>
@@ -243,7 +243,7 @@ const Header = () => {
                                             <span>Explore Destinations</span>
                                         </div>
 
-                                        {/* <div className="dropdown-content">
+                                        <div className="dropdown-content">
                                             <Row>
                                                 <Col lg={4}>
                                                     <div className='side-bar'>
@@ -293,7 +293,7 @@ const Header = () => {
                                                     </div>
                                                 </Col>
                                             </Row>
-                                        </div> */}
+                                        </div>
                                     </div>
 
                                 </Nav.Link>
@@ -303,7 +303,7 @@ const Header = () => {
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
-            </Container>
+            </Container> */}
         </div>
     )
 }
