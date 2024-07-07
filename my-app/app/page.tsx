@@ -13,7 +13,7 @@ import Col from 'react-bootstrap/Col';
 import { Autoplay, Navigation, Pagination, } from 'swiper/modules';
 export default function Home() {
   return (
-    <div className='home'>
+    <div className='home' style={{zIndex:'1'}}>
       <div className='picture'>
         <div className="custom-pre">
           <div className="swiper-button-next"></div>

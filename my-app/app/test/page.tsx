@@ -58,8 +58,11 @@ const Nav2: React.FC = () => {
     ];
     return (
         <Container className='nav2'>
-
-            <Tabs style={{ border: '1px solid gray', width: '900px', height: '550px' }}
+            <div className='nv'>
+                <div className='dropdown'>
+                    <p><i className="bi bi-geo-alt-fill"></i> Explore destinations</p>
+                    <div className='dropdown-content'>
+                    <Tabs style={{ border: '1px solid gray', width: '900px', height: '550px' }}
                 activeKey={activeKey}
                 tabPosition={tabPosition}
                 items={tabList?.map((item, i) => {
@@ -89,24 +92,54 @@ const Nav2: React.FC = () => {
                                         </>
                                     ))}
                                 </div>
-                                <div className='cont'>
+                                {/* <div className='cont'>
                                     {item.content?.map((c) => (
                                         <>
                                             <p>{c.topic}</p>
-                                            <div className='row'>
-                                                <div className='col-lg-5'><p style={{ fontSize: '18px', fontWeight: 500, padding: '20px' }}>{c.name}</p></div>
-                                                <div className='col-lg-7' style={{ height: '100px' }}><p style={{ fontSize: '16px', fontWeight: 500, padding: '20px', color: "gray" }}>{c.provice}</p></div>
-                                            </div>
+                                     
+                                             <div className='sa' style={{ display:'flex'}}>
+                                                    <p>{c.name}</p>
+                                                    <p className='s'>{c.provice}</p>
+                                                 </div> 
                                         </>
                                     ))}
-
-                                </div>
+                                </div> */}
                             </>
                         ),
                     }
                 })}
-
             />
+                    </div>
+                </div>
+                <div className=''>
+                    <p>All category</p>
+                </div>
+                <div className=''>
+                    <p>Tour & experiences</p>
+                </div>
+                <div className=''>
+                    <p>Attraction tickets</p></div>
+                <div className=''>
+                     <p>Holtels</p>   
+                </div>
+                <div className=''>
+                    <p>Transport</p>
+                </div>
+                <div className=''>
+                    <p>Car rentals</p>
+                </div>
+                <div className=''>
+                <p>...</p>
+                </div>
+                <div className=''>
+                    <p>|</p>
+                </div>
+                <div className='' style={{display:'flex', }}>
+                    <img src="/img/grif.png" width={30} height={30} alt="" style={{position:'relative',bottom:'7px'}}/>
+                    <p>Gift cards</p>
+                </div>
+            </div>
+           
         </Container >
 
     )

@@ -7,13 +7,56 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Dropdown from 'react-bootstrap/Dropdown';
 import '../../scss/header.scss';
-import React from 'react';
-import ListGroup from 'react-bootstrap/ListGroup';
-import Tab from 'react-bootstrap/Tab';
-import { useState } from "react";
+import React, { useState } from 'react';
+import type { RadioChangeEvent } from 'antd';
+import { Tabs } from 'antd';
+type TabPosition = 'left';
 const Header = () => {
+    const [tabPosition, setTabPosition] = useState<TabPosition>('left');
+    const [activeKey, setActiveKey] = useState('1');
+
+    const changeTabPosition = (e: RadioChangeEvent) => {
+        setTabPosition(e.target.value);
+    };
+
+    const handleTabHover = (key: string) => {
+        setActiveKey(key);
+    };
+    const tabList = [
+        {
+            key: 'tab1', title: 'Popular destinations', content: [
+                { topic: '', name: '', provice: '' },
+
+            ], picture: [
+                { image: 'https://res.klook.com/image/upload/fl_lossy.progressive,w_500,h_334,c_fill,q_85/activities/j6qewd8nu90qsxynwg9o.webp', locate: 'Australia' },
+                { image: 'https://res.klook.com/image/upload/fl_lossy.progressive,w_500,h_334,c_fill,q_85/activities/ma2flmh7fal5visbuiy3.webp', locate: 'Da Nang' },
+                { image: 'https://res.klook.com/image/upload/fl_lossy.progressive,w_500,h_334,c_fill,q_85/activities/otv8vrjkqxriwlvbld8o.webp', locate: 'Sapa' },
+                { image: 'https://res.klook.com/image/upload/fl_lossy.progressive,w_500,h_334,c_fill,q_85/activities/lwlid7jn0quxuonwabzk.webp', locate: 'Ho Chi Minh  City' },
+                { image: 'https://res.klook.com/image/upload/fl_lossy.progressive,w_500,h_334,c_fill,q_85/activities/j6qewd8nu90qsxynwg9o.webp', locate: 'Australia' },
+                { image: 'https://res.klook.com/image/upload/fl_lossy.progressive,w_500,h_334,c_fill,q_85/activities/ma2flmh7fal5visbuiy3.webp', locate: 'Da Nang' },
+                { image: 'https://res.klook.com/image/upload/fl_lossy.progressive,w_500,h_334,c_fill,q_85/activities/otv8vrjkqxriwlvbld8o.webp', locate: 'Sapa' },
+                { image: 'https://res.klook.com/image/upload/fl_lossy.progressive,w_500,h_334,c_fill,q_85/activities/lwlid7jn0quxuonwabzk.webp', locate: 'Ho Chi Minh City' },
+                { image: 'https://res.klook.com/image/upload/fl_lossy.progressive,w_500,h_334,c_fill,q_85/activities/j6qewd8nu90qsxynwg9o.webp', locate: 'Australia' },
+                { image: 'https://res.klook.com/image/upload/fl_lossy.progressive,w_500,h_334,c_fill,q_85/activities/ma2flmh7fal5visbuiy3.webp', locate: 'Da Nang' },
+                { image: 'https://res.klook.com/image/upload/fl_lossy.progressive,w_500,h_334,c_fill,q_85/activities/otv8vrjkqxriwlvbld8o.webp', locate: 'Sapa' },
+                { image: 'https://res.klook.com/image/upload/fl_lossy.progressive,w_500,h_334,c_fill,q_85/activities/lwlid7jn0quxuonwabzk.webp', locate: 'Ho Chi Minh  City' },
+            ]
+        },
+        {
+            key: 'tab2', title: 'East Asia', content: [
+                { topic: 'Select a country or city to explore', name: 'HongKong & MaCau', provice: 'HongKong , MaCau' },
+                { name: 'TaiWan', provice: 'Taipie Yiland Taipie Yiland Taipie Yiland' },
+                { name: 'Jabpan', provice: 'Taipie Yiland Taipie Yiland Taipie Yiland Taipie Yiland Taipie Yiland' },
+                { name: 'MaindLand China', provice: 'Taipie Yiland Taipie Yiland Taipie Yiland Taipie Yiland Taipie Yiland Taipie Yiland Taipie Yiland Taipie Yiland Taipie Yiland Taipie Yiland Taipie Yiland Taipie Yiland Taipie Yiland Taipie Yiland' },
+            ],
+        },
+        { key: 'tab3', title: 'South East Asia', content: 'content3' },
+        { key: 'tab4', title: 'South Asia / Middle East', content: 'content2' },
+        { key: 'tab5', title: 'Oceania', content: 'content3' },
+        // { key: 'tab6', title: 'Europe / Africa', content: 'content2' },
+        // { key: 'tab7', title: 'North America', content: 'content3' },
+    ];
     const [hidden1, setHidden1] = useState(true);
     const [hidden2, setHidden2] = useState(true);
     return (
@@ -224,6 +267,92 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Navbar >
             </Container >
+            <hr style={{ position: 'relative', bottom: '16px' }} />
+            <Container className='nav2'>
+            <div className='nv'>
+                <div className='dropdown'>
+                    <p><i className="bi bi-geo-alt-fill"></i> Explore destinations</p>
+                    <div className='dropdown-content'>
+                    <Tabs style={{ width: '900px', height: '350px' }}
+                activeKey={activeKey}
+                tabPosition={tabPosition}
+                items={tabList?.map((item, i) => {
+                    const id = String(item.key);
+                    return {
+                        label: (
+                            <div className='label' onMouseEnter={() => handleTabHover(id)} >
+                                <div className='title'>
+                                    <p>{item.title}</p>
+                                </div>
+                            </div>
+                        ),
+                        key: id,
+                        children: (
+                            <>
+                                <div className='row mt-3'>
+                                    {item.picture?.map((p) => (
+                                        <>
+                                            <div className='col-3'>
+                                                <img src={p.image} width={140} height={74} alt="" style={{ borderRadius: '6px' }} />
+                                                <p style={{ position: 'relative', color: 'white', fontSize: '16px', fontWeight: '500', bottom: '15px', left: '10px' }}>{p.locate}</p>
+                                            </div>
+
+                                            {/* <div style={{ position: 'relative', right: '122px', top: '48px', color: 'red', fontSize: '16px', fontWeight: '500' }}>
+                                                <p>{p.locate}</p>
+                                            </div> */}
+                                        </>
+                                    ))}
+                                </div>
+                                {/* <div className='cont'>
+                                    {item.content?.map((c) => (
+                                        <>
+                                            <p>{c.topic}</p>
+                                     
+                                             <div className='sa' style={{ display:'flex'}}>
+                                                    <p>{c.name}</p>
+                                                    <p className='s'>{c.provice}</p>
+                                                 </div> 
+                                        </>
+                                    ))}
+                                </div> */}
+                            </>
+                        ),
+                    }
+                })}
+            />
+                    </div>
+                </div>
+                <div className=''>
+                    <p>All category</p>
+                </div>
+                <div className=''>
+                    <p>Tour & experiences</p>
+                </div>
+                <div className=''>
+                    <p>Attraction tickets</p></div>
+                <div className=''>
+                     <p>Holtels</p>   
+                </div>
+                <div className=''>
+                    <p>Transport</p>
+                </div>
+                <div className=''>
+                    <p>Car rentals</p>
+                </div>
+                <div className=''>
+                <p>...</p>
+                </div>
+                <div className=''>
+                    <p>|</p>
+                </div>
+                <div className='' style={{display:'flex', }}>
+                    <img src="/img/grif.png" width={30} height={30} alt="" style={{position:'relative',bottom:'7px'}}/>
+                    <p>Gift cards</p>
+                </div>
+            </div>
+           
+        </Container >
+
             {/* <hr style={{ position: 'relative', bottom: '16px' }} />
             <Container className='nav2'>
                 <Navbar expand="lg">
