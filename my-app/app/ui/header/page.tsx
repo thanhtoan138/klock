@@ -54,8 +54,8 @@ const Header = () => {
         { key: 'tab3', title: 'South East Asia', content: 'content3' },
         { key: 'tab4', title: 'South Asia / Middle East', content: 'content2' },
         { key: 'tab5', title: 'Oceania', content: 'content3' },
-        // { key: 'tab6', title: 'Europe / Africa', content: 'content2' },
-        // { key: 'tab7', title: 'North America', content: 'content3' },
+        { key: 'tab6', title: 'Europe / Africa', content: 'content2' },
+        { key: 'tab7', title: 'North America', content: 'content3' },
     ];
     const [hidden1, setHidden1] = useState(true);
     const [hidden2, setHidden2] = useState(true);
@@ -269,41 +269,41 @@ const Header = () => {
             </Container >
             <hr style={{ position: 'relative', bottom: '16px' }} />
             <Container className='nav2'>
-            <div className='nv'>
-                <div className='dropdown'>
-                    <p><i className="bi bi-geo-alt-fill"></i> Explore destinations</p>
-                    <div className='dropdown-content'>
-                    <Tabs style={{ width: '900px', height: '350px' }}
-                activeKey={activeKey}
-                tabPosition={tabPosition}
-                items={tabList?.map((item, i) => {
-                    const id = String(item.key);
-                    return {
-                        label: (
-                            <div className='label' onMouseEnter={() => handleTabHover(id)} >
-                                <div className='title'>
-                                    <p>{item.title}</p>
-                                </div>
-                            </div>
-                        ),
-                        key: id,
-                        children: (
-                            <>
-                                <div className='row mt-3'>
-                                    {item.picture?.map((p) => (
-                                        <>
-                                            <div className='col-3'>
-                                                <img src={p.image} width={140} height={74} alt="" style={{ borderRadius: '6px' }} />
-                                                <p style={{ position: 'relative', color: 'white', fontSize: '16px', fontWeight: '500', bottom: '15px', left: '10px' }}>{p.locate}</p>
+                <div className='nv'>
+                    <div className='dropdown'>
+                        <p><i className="bi bi-geo-alt-fill"></i> Explore destinations</p>
+                        <div className='dropdown-content'>
+                            <Tabs style={{ width: '900px', height: '356px', }}
+                                defaultActiveKey={activeKey}
+                                tabPosition={tabPosition}
+                                items={tabList?.map((item, i) => {
+                                    const id = String(item.key);
+                                    return {
+                                        label: (
+                                            <div className='label' onMouseEnter={() => handleTabHover(id)} >
+                                                <div className='title'>
+                                                    <p>{item.title}</p>
+                                                </div>
                                             </div>
+                                        ),
+                                        key: id,
+                                        children: (
+                                            <>
+                                                <div className='row mt-3'>
+                                                    {item.picture?.map((p) => (
+                                                        <>
+                                                            <div className='col-3'>
+                                                                <img src={p.image} width={140} height={74} alt="" style={{ borderRadius: '6px' }} />
+                                                                <p style={{ position: 'relative', color: 'white', fontSize: '16px', fontWeight: '500', bottom: '15px', left: '10px' }}>{p.locate}</p>
+                                                            </div>
 
-                                            {/* <div style={{ position: 'relative', right: '122px', top: '48px', color: 'red', fontSize: '16px', fontWeight: '500' }}>
+                                                            {/* <div style={{ position: 'relative', right: '122px', top: '48px', color: 'red', fontSize: '16px', fontWeight: '500' }}>
                                                 <p>{p.locate}</p>
                                             </div> */}
-                                        </>
-                                    ))}
-                                </div>
-                                {/* <div className='cont'>
+                                                        </>
+                                                    ))}
+                                                </div>
+                                                {/* <div className='cont'>
                                     {item.content?.map((c) => (
                                         <>
                                             <p>{c.topic}</p>
@@ -315,43 +315,43 @@ const Header = () => {
                                         </>
                                     ))}
                                 </div> */}
-                            </>
-                        ),
-                    }
-                })}
-            />
+                                            </>
+                                        ),
+                                    }
+                                })}
+                            />
+                        </div>
+                    </div>
+                    <div className=''>
+                        <p>All category</p>
+                    </div>
+                    <div className=''>
+                        <p>Tour & experiences</p>
+                    </div>
+                    <div className=''>
+                        <p>Attraction tickets</p></div>
+                    <div className=''>
+                        <p>Holtels</p>
+                    </div>
+                    <div className=''>
+                        <p>Transport</p>
+                    </div>
+                    <div className=''>
+                        <p>Car rentals</p>
+                    </div>
+                    <div className=''>
+                        <p>...</p>
+                    </div>
+                    <div className=''>
+                        <p style={{ fontSize: '13px', color: ' gray ' }}>|</p>
+                    </div>
+                    <div className='' style={{ display: 'flex', }}>
+                        <img src="/img/grif.png" width={30} height={30} alt="" style={{ position: 'relative', bottom: '7px' }} />
+                        <p>Gift cards</p>
                     </div>
                 </div>
-                <div className=''>
-                    <p>All category</p>
-                </div>
-                <div className=''>
-                    <p>Tour & experiences</p>
-                </div>
-                <div className=''>
-                    <p>Attraction tickets</p></div>
-                <div className=''>
-                     <p>Holtels</p>   
-                </div>
-                <div className=''>
-                    <p>Transport</p>
-                </div>
-                <div className=''>
-                    <p>Car rentals</p>
-                </div>
-                <div className=''>
-                <p>...</p>
-                </div>
-                <div className=''>
-                    <p>|</p>
-                </div>
-                <div className='' style={{display:'flex', }}>
-                    <img src="/img/grif.png" width={30} height={30} alt="" style={{position:'relative',bottom:'7px'}}/>
-                    <p>Gift cards</p>
-                </div>
-            </div>
-           
-        </Container >
+
+            </Container >
 
             {/* <hr style={{ position: 'relative', bottom: '16px' }} />
             <Container className='nav2'>
